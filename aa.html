@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <input type="text" id="in">
+        <div id="out">
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#in").keyup(function(){
+                    var v1=$("#in").val()
+                    if(v1!="")
+                    {
+                        load_data(v1)
+                    }
+                    else{
+                        load_data()
+                    }
+                })
+                function load_data(search)
+                {
+                    $.ajax({
+                        url:"csecjq.php",
+                        method:"POST",
+                        data:{v2:search},
+                        success:function(data){
+                            $("#out").html(data)
+                        }
+                    })
+                }
+            })
+        </script>
+    </body>
+</html>

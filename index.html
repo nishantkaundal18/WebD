@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Form</title>
+    </head>
+    <body>
+        <h2>Employee Details</h2>
+        <form action ="submit.php" method="post">
+            <label for="employee_id">Employee ID</label>
+            <input type="number" id="employee_id" name="employee_id" required><br><br>
+            <label for="name">NAME:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required><br><br> 
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" required><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required><br><br>
+            <input type="submit" value="submit">
+        </form>
+        <h2>Employees with ID between 101 and 200</h2>
+    <div id="employee_list">
+        <!-- Employee details will be displayed here -->
+       <?php include 'fetch_employees.php'; ?>
+    </div>
+</body>
+</html>
+    </body>
+</html>
